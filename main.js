@@ -21,15 +21,22 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove('open');
   console.log(event.target.dataset.link);
   scrollIntoView(link);
 });
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar_toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
+}); 
 
 // Handle click on "Contact me" button on home
 const homeContactBtn = document.querySelector('.home_contact');
 homeContactBtn.addEventListener('click', () => {
   scrollIntoView('#contact');
-});
+});   
 
 // Make home slowly fade to transparent as the window scroll down
 const home = document.querySelector('.home_container')
