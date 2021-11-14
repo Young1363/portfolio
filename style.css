@@ -61,6 +61,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* Typography */
@@ -170,6 +171,10 @@ p {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+.home_contact:hover {
+  background-color: var(--color-orange);
 }
 
 /* Section common */
@@ -308,6 +313,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category_btn.selected,
@@ -334,9 +340,9 @@ p {
   line-height: 24px;
   display: inline-block;
   margin-left: 3px;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -406,7 +412,7 @@ p {
   display: block;
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); 
   margin-top: 8px;
   width: 50px;
   height: 2px;
@@ -506,8 +512,21 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+
+  :root {
+    /* Font size */
+  --font-large: 30px;  
+  --font-medium: 18px;  
+  --font-regular: 16px;
+  --font-small: 14px;  
+  --font-micro: 12px;  
+  }
+
   .navbar_toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -530,27 +549,63 @@ p {
   .navbar_menu.open {
     display: block;
   }
+
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
   
 
   .about_majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0;
   }
 
   .major {
-    margin: 38px;
+    margin: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category_btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+
   .project {
     flex-grow: 1;
   }
 
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonial_avartar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial_avartar:nth-child(even), 
+  .testimonial_avartar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testimonial_speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 50px;
+  right: 16px;
+  bottom: 16px;
   }
 }
 
